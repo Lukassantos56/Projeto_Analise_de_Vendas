@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Relatório de Vendas | Jan-Jun 2026</title>
+<meta name="description" content="Dashboard interativo de análise de vendas e performance comercial (SQL, Power BI e JavaScript). Dados simulados, projeto de portfólio.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Relatório de Vendas | Jan-Jun 2026">
+<meta property="og:description" content="Dashboard interativo de análise de vendas: faturamento por categoria, mês, região e vendedor. Dados simulados, projeto de portfólio.">
+<meta property="og:image" content="https://lukassantos56.github.io/Projeto-analise-de-vendas/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<main class="canvas">
+  <noscript><p style="color:#fdb515">Ative o JavaScript para usar o dashboard interativo.</p></noscript>
+  <header class="title">
+    <h1>Relatório de Vendas</h1>
+    <p>Jan-Jun 2026</p>
+  </header>
+
+  <section class="kpis" aria-label="Indicadores principais">
+    <div class="kpi"><div class="label">Faturamento</div><div class="value" id="kFaturamento">-</div></div>
+    <div class="kpi"><div class="label">Pedidos</div><div class="value" id="kPedidos">-</div></div>
+    <div class="kpi"><div class="label">Ticket Médio</div><div class="value" id="kTicket">-</div></div>
+    <div class="kpi"><div class="label">Unidades Vendidas</div><div class="value" id="kUnidades">-</div></div>
+  </section>
+
+  <section class="body">
+    <aside class="slicers" aria-label="Filtros">
+      <div class="slicer">
+        <h2>Período</h2>
+        <label class="opt"><input type="checkbox" checked disabled> 2026</label>
+        <div class="chips" id="fMes" role="group" aria-label="Mês"></div>
+      </div>
+      <div class="slicer">
+        <h2>Região</h2>
+        <div id="fRegiao"></div>
+      </div>
+      <div class="slicer">
+        <h2>Categoria</h2>
+        <div id="fCategoria"></div>
+      </div>
+      <button id="fReset" type="button">Limpar filtros</button>
+    </aside>
+
+    <div class="pages">
+      <div class="page" id="page-0" role="tabpanel" aria-labelledby="tab-0">
+        <div class="charts">
+          <div class="card">
+            <h3>Faturamento <small>por Categoria</small></h3>
+            <div class="chart-holder" id="chartCategoria"></div>
+          </div>
+          <div class="card">
+            <h3>Faturamento <small>por Mês</small></h3>
+            <div class="chart-holder" id="chartMensal"></div>
+          </div>
+        </div>
+        <section class="insights">
+          <h2>Insights</h2>
+          <p id="insight">-</p>
+        </section>
+      </div>
+
+      <div class="page" id="page-1" role="tabpanel" aria-labelledby="tab-1" hidden>
+        <div class="charts">
+          <div class="card">
+            <h3>Pedidos <small>por Produto</small></h3>
+            <div class="chart-holder" id="chartPedidosProduto"></div>
+          </div>
+          <div class="card">
+            <h3>Faturamento <small>por Região</small></h3>
+            <div class="chart-holder" id="chartRegiao"></div>
+          </div>
+          <div class="card">
+            <h3>Faturamento <small>por Produto</small></h3>
+            <div class="chart-holder" id="chartProdutos"></div>
+          </div>
+          <div class="card">
+            <h3>Faturamento e Unidades <small>por Produto</small></h3>
+            <div class="table-wrap">
+              <table id="tblProdutos">
+                <thead><tr><th>Produto</th><th>Categoria</th><th>Faturamento</th><th>Unidades</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="page-2" role="tabpanel" aria-labelledby="tab-2" hidden>
+        <div class="charts">
+          <div class="card">
+            <h3>Faturamento <small>por Vendedor</small></h3>
+            <div class="chart-holder" id="chartVendedor"></div>
+          </div>
+          <div class="card seller">
+            <h3>Performance <small>por Vendedor</small></h3>
+            <div class="table-wrap">
+              <table id="tblVendedores">
+                <thead><tr><th>Vendedor</th><th>Pedidos</th><th>Faturamento</th><th>Ticket médio</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Páginas do relatório">
+    <button role="tab" id="tab-0" aria-controls="page-0" aria-selected="true" data-page="0">Relatório de vendas</button>
+    <button role="tab" id="tab-1" aria-controls="page-1" aria-selected="false" data-page="1" tabindex="-1">Produtos e Regiões</button>
+    <button role="tab" id="tab-2" aria-controls="page-2" aria-selected="false" data-page="2" tabindex="-1">Vendedor</button>
+  </nav>
+
+  <footer>
+    Dados simulados para fins educacionais e de portfólio · Lukas da Silva Santos ·
+    <a href="https://github.com/Lukassantos56" target="_blank" rel="noopener">github.com/Lukassantos56</a>
+  </footer>
+</main>
+<script src="js/script.js"></script>
+</body>
+</html>

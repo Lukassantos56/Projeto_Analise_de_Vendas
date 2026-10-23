@@ -1,0 +1,11 @@
+id_produto,produto,categoria,subcategoria,preco_unitario
+1,Notebook Pro 14,Eletrônicos,Notebook,4200.0
+2,Smartphone X,Eletrônicos,Celular,2500.0
+3,Monitor 24,Eletrônicos,Monitor,1100.0
+4,Teclado Mecânico,Acessórios,Periférico,320.0
+5,Mouse Sem Fio,Acessórios,Periférico,140.0
+6,Headset Pro,Acessórios,Áudio,280.0
+7,Cadeira Office,Móveis,Cadeira,950.0
+8,Mesa Compacta,Móveis,Mesa,780.0
+9,Webcam Full HD,Eletrônicos,Câmera,360.0
+10,SSD 1TB,Componentes,Armazenamento,520.0
